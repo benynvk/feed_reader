@@ -58,7 +58,7 @@ Your task is to create a PHP application that is a feeds reader. The app can rea
     ~~~
     php artisan feedUrl {URL} {logFile}
     ~~~
-- `URL` parameter is feed URL you want to get data. You can do with many URL by seperating by comma.
+- `URL` parameter is the URL you want to get feed data. You can implement with many URLs by separating by comma.
 
 - `logFile` parameter is the log file to write output of this process. 
     - Currently, accepted values for this parameter are `feed_log_1`, `feed_log_2`, `feed_log_3`. These files are located in `storage/logs`.
@@ -69,7 +69,7 @@ Your task is to create a PHP application that is a feeds reader. The app can rea
     php artisan feedUrl https://www.feedforall.com/sample.xml,https://www.feedforall.com/sample-feed.xml feed_log_1
     ~~~
 
-After running two above commands, your database is completely created.
+After running two commands above, your database is completely created.
 
 You also can use web app on: http://domain.name/base-php
 - Domain name depends on server you use.
