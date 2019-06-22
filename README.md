@@ -19,3 +19,66 @@ Your task is to create a PHP application that is a feeds reader. The app can rea
 2. Start coding
 3. Use gitflow to manage branches on your repository
 4. Open a pull request to this repository after done
+
+# Solution
+## Requirement
+- **Apache:** 2.2 or higher.
+- **PHP:** 7.1.17 or higher.
+- **MySQL:** 5.5 or higher.
+- **Composer:** 1.6.5 or higher.
+## Configuration and installation:
+- Install vendor:
+~~~
+composer install
+~~~
+- Create .env file:
+~~~
+cp .env.example .env
+~~~
+Edit database configuration in .env file:
+- `DB_DATABASE` value can be whatever and you also don't need to create a database. My command in next part will help you.
+~~~
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=feeds_reader
+DB_USERNAME=root
+DB_PASSWORD=
+~~~
+- Generate key application:
+~~~
+php artisan key:generate
+~~~
+## Usage
+- Create database:
+~~~
+php artisan initializeDatabase
+~~~
+- Get data from feed URL:
+~~~
+php artisan feedUrl {URL} {logFile}
+~~~
+`URL` parameter is feed URL you want to get data. You can do with many URL by seperating by comma.
+
+`logFile` parameter is the log file to write output of this process. 
+- Currently, accepted values for this parameter are `feed_log_1`, `feed_log_2`, `feed_log_3`. These files are located in `storage/logs`
+- You can edit or create more log option in `config/logging.php`
+
+Example command:
+~~~
+php artisan feedUrl https://www.feedforall.com/sample.xml,https://www.feedforall.com/sample-feed.xml feed_log_1
+~~~
+
+After running two above commands, your database is completely created.
+
+You also can use web app on: http://domain.name/base-php
+- Domain name depends on server you use
+
+## Reference
+This app  is powered by **Laravel v5.8**, **Bootstrap v3.4.0** and **jQuery v3.4.1**
+1. https://laravel.com
+2. https://getbootstrap.com
+3. https://jquery.com
+
+## Author
+Khoa Nguyen | benynvk@gmail.com
