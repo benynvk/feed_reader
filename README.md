@@ -62,7 +62,7 @@ Your task is to create a PHP application that is a feeds reader. The app can rea
 
 - `logFile` parameter is the log file to write output of this process. 
     - Currently, accepted values for this parameter are `feed_log_1`, `feed_log_2`, `feed_log_3`. These files are located in `storage/logs`.
-    - You can edit or create more log option in `config/logging.php`.
+    - You can edit or create more log options in `config/logging.php`.
 
 - Example command:
     ~~~
